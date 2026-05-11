@@ -97,6 +97,7 @@ export default function App() {
   const tokens    = result?.tokens    || []
   const symbols   = result?.symbols   || []
   const errors    = result?.errors    || []
+  const ast       = result?.ast       || null
   const astText   = result?.ast_text  || ''
   const nodeCount = result?.node_count || 0
 
@@ -145,7 +146,7 @@ export default function App() {
                   {nodeCount > 0 ? `${nodeCount} nodos` : ''}
                 </span>
               </div>
-              <ASTPanel astText={astText} nodeCount={nodeCount} />
+              <ASTPanel ast={ast} astText={astText} nodeCount={nodeCount} />
             </>
           )}
 
